@@ -57,16 +57,18 @@ const idPizza = pizzasConIdImpar.forEach((pizzaId) => {
   console.log(`Las pizzas con "id" impar son: ${pizzaId.id}`);
 });
 
-
 //ejercicio B: Responder ¿Hay alguna pizza que valga menos de $600?.
 const pizzaMenorAseiscientos = pizzas.some((pizza) => {
   return (pizza = pizza.precio < 600);
 });
 
 console.log(
-  `¿Hay alguna pizza que valga menos de $600? ${pizzaMenorAseiscientos}`
+  `¿Hay alguna pizza que valga menos de $600? ${
+    pizzaMenorAseiscientos
+      ? "Sí, hay pizzas con precio menor a lo indicado."
+      : "No, todas superan ese valor."
+  }`
 );
-
 
 //ejercicio C: El nombre de cada pizza con su respectivo precio.
 pizzas.forEach((pizza) => {
@@ -74,7 +76,6 @@ pizzas.forEach((pizza) => {
     `Pizza: ${pizza.nombre}, tiene un valor de $${pizza.precio} pesos.`
   );
 });
-
 
 //ejercicio D: Todos los ingredientes de cada pizza (en cada iteración imprimir los ingredientes de la pizza que se está recorriendo).
 pizzas.forEach((pizza) => {
